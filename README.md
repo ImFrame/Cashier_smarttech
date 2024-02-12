@@ -1,5 +1,4 @@
 # Cashier_smarttech
-https://github.com/ImFrame/Cashier_smarttech/blob/main/LINE_ALBUM_2023.9.22_240213_1.jpg?raw=true
 <img width="100%" src="https://github.com/ImFrame/Cashier_smarttech/blob/main/LINE_ALBUM_2023.9.22_240213_1.jpg"></a>
 This repository is created by a group of students from Burapha University.
 
