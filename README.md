@@ -1,8 +1,12 @@
 # Cashier_smarttech
 
-This Repository is made from group of students from Burapha University.
+This repository is created by a group of students from Burapha University.
 
-self-cashier is about auto cashier at super market 
+"Self-cashier" is a system that integrates both hardware and software components. The hardware includes a robotic arm responsible for picking up items and placing them on a conveyor belt. The conveyor belt then transports the items to a camera for detection and classification, followed by the generation of a receipt. Another robotic arm is employed to pack the items into bags for the customer to take home.
+
+On the software side, machine learning algorithms are utilized for product classification, and the data is stored in a database. A web page is created to display the list of products on the current bill, along with the generated receipt.
+
+This innovative system streamlines the checkout process and enhances the overall shopping experience for customers.
 
 Files in this repo is have 
  - Dockerfile
