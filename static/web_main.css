@@ -1,0 +1,133 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+/* Navbar styles */
+.navbar {
+    background-color: #2988c7;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.navbar-left {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-brand {
+    font-size: 35px;
+    color: white;
+    font-weight: bold;
+}
+
+
+
+.container {
+    display: grid;
+    grid-template-columns: 65% auto auto;
+    grid-template-rows: 100px minmax() 200px;
+    grid-template-areas: 
+          'leftbar rightbar';  
+    padding: 20 px;
+  }
+
+  .page-leftbar {
+    grid-area: leftbar;
+    display: flex;
+    flex-direction: column;  /*จัดเนื้อหาให้อยู่ในแนวตั้ง */
+    justify-content: center;
+} 
+
+.page-rightbar {
+    grid-area: rightbar;
+    display: flex;
+    flex-direction: column; /* จัดเนื้อหาให้อยู่ในแนวตั้ง */
+    align-items: center; /* จัดเนื้อหาให้อยู่ด้านล่าง */
+    background-color: #2988c7;
+    border: 5px solid rgb(248, 245, 245);
+    box-sizing: border-box;
+    padding: 80px;
+    color: black;
+    
+}
+
+  .page-footer {
+      padding: 50px;
+      background-color: #2988c7;
+      color: black;
+     
+    
+  }
+  
+  .content {
+    background-color: rgb(243, 239, 239);
+    border: 5px solid rgb(248, 245, 245);
+  }
+
+
+
+  .item {
+    text-align: center;
+  }
+
+  .item img {
+    max-width: 100%; /* ขยายรูปให้พอดีกับ Grid Item */
+    padding-bottom: 13px;
+  }
+
+  .item_h {
+    padding-bottom: 20px;
+  }
+
+
+  #table-wrapper {
+    position:relative;
+    width: 980px;
+    
+  }
+  #table-scroll {
+    height:470px;
+    overflow:auto;  
+    margin-top:55px;
+
+    
+  }
+  #table-wrapper table {
+    width:100%;
+    text-align: center;
+
+    
+    
+  }
+  #table-wrapper table * {
+    color:black;
+    padding: 12px;
+  }
+
+
+  #table-wrapper table thead th .text {
+    position: absolute;  
+    top:-15px;
+    height:20px;
+    font-size: 35px;
+    transform: translate(-73px);
+    
+
+  }
+  
+
+
+  #total_price {
+    text-align:  center;
+    padding-top: 30px;
+    font-size: 30px;
+    font-weight: bold;
+  }
+
+  
