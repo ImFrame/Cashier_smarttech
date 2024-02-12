@@ -1,5 +1,6 @@
 # Cashier_smarttech
-<img width="100%" src="https://github.com/ImFrame/Cashier_smarttech/blob/4c88c9e9db3316c9ca32a5adf9e597d080e946c9/group.jpg"></a>
+![Group Image](images/group.jpg)
+
 This repository is created by a group of students from Burapha University.
 
 <p color='#ff00ff'>
