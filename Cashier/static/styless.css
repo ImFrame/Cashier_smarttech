@@ -1,0 +1,178 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Noto Sans Thai", sans-serif;
+}
+
+.container {
+  display: flex;
+}
+
+.main-content {
+  flex-direction: row;
+}
+/**************** nav bar *******************/
+.navbar {
+  background-color: #2988c7;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  width: 100%;
+}
+
+.navbar-brand {
+  font-size: 35px;
+  color: white;
+  font-weight: bold;
+}
+
+/* ******************************** */
+
+/**************** left *******************/
+.left-panel {
+  flex: 1;
+  padding: 10px;
+}
+
+.left-table {
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+  height: 500px;
+  width: 98%;
+  margin-top: 10px;
+  margin-left: 0px;
+  border-radius: 25px;
+  overflow-y: auto; /* เพิ่ม scrollbar เมื่อข้อมูลเกินความสูง */
+  overflow-x: hidden; /* ปิดการให้มีการเลื่อนนอน (horizontal scrolling) */
+}
+
+#table-wrapper {
+  position: relative;
+  width: 650px;
+  text-align: center;
+  margin-top: 15px;
+}
+
+#table-wrapper table {
+  width: 90%;
+  text-align: center;
+  margin-left: 15px;
+}
+
+#table-wrapper table * {
+  color: black;
+  padding: 10px;
+  padding-left: 10px;
+}
+
+#table-scroll {
+  height: 450px;
+  width: 95%;
+  overflow: auto;
+  margin-bottom: 5px;
+}
+
+#table-wrapper table thead th .text {
+  position: relative; /* เปลี่ยนจาก absolute เป็น relative */
+  height: 20px;
+  font-size: 20px;
+  margin-bottom: 5px; /* เพิ่มการขยับลงล่างเล็กน้อย */
+}
+
+#table-wrapper table thead th {
+  position: sticky; /* ทำให้หัวข้อติดอยู่ด้านบน */
+  top: 0; /* ตำแหน่งของหัวข้อ 0 คือด้านบน */
+  background-color: #fff; /* สีพื้นหลังของหัวข้อ */
+  z-index: 2; /* ความสูงของหัวข้อ 2 คืออยู่บนสุด */
+}
+
+/* ******************************** */
+
+/**************** midle *******************/
+.midle-panel {
+  flex: 1;
+}
+
+.table-first {
+  margin-top: 11px;
+  width: 400px;
+  height: 500px;
+  border-radius: 25px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.table-container {
+  padding: 10px;
+}
+/* ******************************** */
+
+/**************** right *******************/
+
+.right-panel {
+  flex: 1;
+  padding: 10px;
+  padding-left: 20px;
+}
+
+.right-table {
+  height: 98%;
+  margin-top: 10px;
+  border-radius: 25px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+}
+/* ******************************** */
+
+.button {
+  background-color: #4caf50;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 10px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button1 {
+  background-color: white;
+  color: black;
+  border: 2px solid #4caf50;
+}
+
+.button1:hover {
+  background-color: #4caf50;
+  color: white;
+}
+
+.btn {
+  border: none;
+  color: white;
+  padding: 18px 28px;
+  font-size: 15px;
+  cursor: pointer;
+  margin-left: 1360px;
+  margin-top: 15px;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 86px;
+  text-align: center;
+  padding: 3px;
+  background-color: #2988c7;
+  color: white;
+}
+
+.danger {
+  background-color: #f44336;
+} /* Red */
+.danger:hover {
+  background: #da190b;
+}

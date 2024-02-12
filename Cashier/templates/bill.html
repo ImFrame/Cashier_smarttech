@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Auto Cashier</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" href="static/new_logo.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Noto Sans Thai", sans-serif;
+      }
+
+      .receipt {
+        max-width: 600px;
+        height: 700px;
+        margin: auto;
+        border: 2px solid #ee1935;
+        padding: 20px;
+        font-family: Arial, sans-serif;
+        background-color: #ffffff;
+      }
+
+      .receipt h2 {
+        text-align: center;
+      }
+
+      .receipt .details {
+        margin-top: 20px;
+        border-top: 1px solid #ccc;
+        padding-top: 10px;
+      }
+
+      .receipt .details p {
+        margin: 0;
+      }
+
+      #table-wrapper {
+        position: relative;
+        width: 550px;
+        text-align: center;
+        margin-top: 15px;
+        margin-left: 20px;
+      }
+
+      #table-wrapper table {
+        width: 90%;
+        text-align: center;
+        margin-left: 15px;
+      }
+
+      #table-wrapper table * {
+        color: black;
+        padding: 10px;
+        padding-left: 10px;
+      }
+
+      #table-scroll {
+        height: 450px;
+        width: 95%;
+        overflow: auto;
+        margin-bottom: 5px;
+        border-top: 1px solid #000;
+      }
+
+      #table-wrapper table thead th .text {
+        position: relative; /* เปลี่ยนจาก absolute เป็น relative */
+        height: 20px;
+        font-size: 20px;
+        margin-bottom: 5px; /* เพิ่มการขยับลงล่างเล็กน้อย */
+      }
+
+      #table-wrapper table thead th {
+        position: sticky; /* ทำให้หัวข้อติดอยู่ด้านบน */
+        top: 0; /* ตำแหน่งของหัวข้อ 0 คือด้านบน */
+        background-color: #fff; /* สีพื้นหลังของหัวข้อ */
+        z-index: 2; /* ความสูงของหัวข้อ 2 คืออยู่บนสุด */
+        background-color: #ffffff;
+      }
+      .button {
+        border-radius: 15px;
+        padding: 16px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 10px;
+        transition-duration: 0.4s;
+        cursor: pointer;
+        font-weight: bold;
+      }
+      .button2 {
+        background-color: #ee1935;
+        border: 2px solid #ee1935;
+        margin: 10px 10px;
+        font-size: 5px;
+        color: #ffffff;
+      }
+
+      .button2:hover {
+        background-color: #de354b;
+        color: rgb(0, 0, 0);
+      }
+      .button-container {
+        position: fixed;
+        bottom: 0px;
+        right: 10px;
+      }
+    </style>
+    <script>
+      function calculateTotalQty() {
+        // Get all elements in the third column (Qty)
+        const qtyCells = document.querySelectorAll("td:nth-child(4)");
+
+        // Initialize a variable to store the sum
+        let totalQty1 = 0;
+
+        // Loop through the Qty cells and add their values to the totalQty
+        qtyCells.forEach((cell) => {
+          totalQty1 += parseFloat(cell.textContent);
+        });
+
+        // Display the totalQty in the "totalQty" span
+        const totalQtySpan = document.getElementById("totalQty1");
+        totalQtySpan.textContent = totalQty1;
+      }
+
+      // Add an event listener to run the function after the DOM is fully loaded
+      document.addEventListener("DOMContentLoaded", calculateTotalQty);
+    </script>
+  </head>
+  <body>
+    <div class="receipt" style="margin-top: 20px">
+      <div style="display: flex; margin-left: 100px">
+        <img
+          src="static/newlogo.png"
+          class="navbar-image"
+          style="
+            margin-top: -12px;
+            margin-right: -60px;
+            margin-bottom: -20px;
+            height: 100px;
+            width: 180px;
+          "
+        />
+        <p
+          style="
+            margin-top: 5px;
+            font-size: 35px;
+            font-weight: bold;
+            color: #000000;
+          "
+        >
+          A S H I E R
+        </p>
+      </div>
+
+      <h2>ใบเสร็จรับเงิน</h2>
+      <div id="table-wrapper">
+        <div id="table-scroll">
+          <table>
+            <thead>
+              <tr>
+                <th><span class="text">รายการ</span></th>
+                <th><span class="text">จำนวน</span></th>
+                <th><span class="text">ราคา/หน่วย</span></th>
+                <th><span class="text">ราคา</span></th>
+              </tr>
+            </thead>
+            <tbody>
+              <div class="text-table">
+                {% for item in data %}
+                <tr>
+                  <td>{{ item[2] }}</td>
+                  <td>{{ item[3] }}</td>
+                  <td>{{ item[4] }}</td>
+                  <td>{{ item[5] }}</td>
+                </tr>
+                {% endfor %}
+              </div>
+            </tbody>
+          </table>
+        </div>
+        <p style="margin-left: -30px">
+          ______________________________________________________________________________
+        </p>
+        <div style="display: flex">
+          <p
+            style="
+              margin-top: 20px;
+              font-weight: bold;
+              margin-left: 170px;
+              font-size: 20px;
+            "
+          >
+            ยอดชำระ
+          </p>
+          <span
+            id="totalQty1"
+            style="
+              margin-top: 20px;
+              font-weight: bold;
+              margin-left: 25px;
+              font-size: 20px;
+            "
+          >
+            0
+          </span>
+          <p
+            style="
+              margin-top: 20px;
+              font-weight: bold;
+              margin-left: 10px;
+              font-size: 20px;
+            "
+          >
+            บาท
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="button-container">
+      <a href="/" class="button button2" style="font-size: 10px"
+        ><p>เสร็จสิ้น</p></a
+      >
+    </div>
+  </body>
+</html>
